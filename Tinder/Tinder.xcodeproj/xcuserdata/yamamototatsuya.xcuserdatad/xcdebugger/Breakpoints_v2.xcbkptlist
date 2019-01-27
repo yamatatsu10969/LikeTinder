@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tinder/ViewController.swift"
-            timestampString = "570272956.0975111"
+            timestampString = "570274672.744285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "swipeCard(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tinder/ViewController.swift"
-            timestampString = "570272956.0978251"
+            timestampString = "570274672.74466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "swipeCard(_:)"
             landmarkType = "7">
          </BreakpointContent>

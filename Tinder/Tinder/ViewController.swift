@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     var people  = [UIView]()
     var selectedCardCount: Int = 0
     
+    // likeされたらlikedNameに入れていく
+    let name = ["なつき","あかね","さくら","カルロス"]
+    var likedName = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,6 +91,11 @@ class ViewController: UIViewController {
                 })
                 likeImageView.alpha = 0
                 selectedCardCount += 1
+                if selectedCardCount >= people.count{
+                    print(likedName)
+                }
+                
+                
                 return
                 //右にスワイプ
             }else if card.center.x > self.view.frame.width - 75 {
@@ -94,7 +103,11 @@ class ViewController: UIViewController {
                     self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x + 250, y: self.people[self.selectedCardCount].center.y + point.y);                   self.resetCard()
                 })
                 likeImageView.alpha = 0
+                likedName.append(name[selectedCardCount])
                 selectedCardCount += 1
+                if selectedCardCount >= people.count{
+                    print(likedName)
+                }
                 return
             }
             

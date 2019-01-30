@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var person3: UIView!
     @IBOutlet weak var person4: UIView!
     
+    
+    
     //値がないときは　! をつける
     var centerOfCard:CGPoint!
     var people  = [UIView]()
@@ -51,6 +53,39 @@ class ViewController: UIViewController {
             // 遷移先の ListViewController を代入している
             let vc = segue.destination as! ListViewController
             vc.likedName = likedName
+        }
+    }
+    @IBAction func didTouchedLikeButton(_ sender: UIButton) {
+        flyCardToRight()
+    }
+    
+    @IBAction func didTouchedDisLikeButton(_ sender: UIButton) {
+        flyCardToLeft()
+    }
+    
+    
+    func flyCardToRight(){
+        UIView.animate(withDuration: 0.2, animations: {
+            self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x + 500, y: self.people[self.selectedCardCount].center.y );
+                self.resetCard()
+        })
+        likeImageView.alpha = 0
+        likedName.append(name[selectedCardCount])
+        selectedCardCount += 1
+        if selectedCardCount >= people.count{
+            performSegue(withIdentifier: "pushList", sender: self)
+        }
+    }
+    
+    func flyCardToLeft(){
+        UIView.animate(withDuration: 0.2, animations: {
+            self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x - 500, y: self.people[self.selectedCardCount].center.y)
+            self.resetCard()
+        })
+        likeImageView.alpha = 0
+        selectedCardCount += 1
+        if selectedCardCount >= people.count{
+            performSegue(withIdentifier: "pushList", sender: self)
         }
     }
     
@@ -93,29 +128,11 @@ class ViewController: UIViewController {
             // 左にスワイプ
             // 75point
             if card.center.x < 75 {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x - 250, y: self.people[self.selectedCardCount].center.y + point.y)
-                    self.resetCard()
-                })
-                likeImageView.alpha = 0
-                selectedCardCount += 1
-                if selectedCardCount >= people.count{
-                    performSegue(withIdentifier: "pushList", sender: self)
-                }
-                
-                
+                flyCardToLeft()
                 return
                 //右にスワイプ
             }else if card.center.x > self.view.frame.width - 75 {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x + 250, y: self.people[self.selectedCardCount].center.y + point.y);                   self.resetCard()
-                })
-                likeImageView.alpha = 0
-                likedName.append(name[selectedCardCount])
-                selectedCardCount += 1
-                if selectedCardCount >= people.count{
-                    performSegue(withIdentifier: "pushList", sender: self)
-                }
+                flyCardToRight()
                 return
             }
             

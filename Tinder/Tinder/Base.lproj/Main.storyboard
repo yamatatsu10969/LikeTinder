@@ -161,17 +161,23 @@
                                     <outletCollection property="gestureRecognizers" destination="c3H-nr-16C" appends="YES" id="EPe-f0-IGI"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-9u-3Zi">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-9u-3Zi" userLabel="like">
                                 <rect key="frame" x="230" y="516" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="heart"/>
+                                <connections>
+                                    <action selector="didTouchedLikeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxW-xn-f4p"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kH-9T-LgJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kH-9T-LgJ" userLabel="disLike">
                                 <rect key="frame" x="80" y="516" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="didTouchedDisLikeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ed4-NP-ZFL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,7 +206,6 @@
         <!--List View Controller-->
         <scene sceneID="1Lj-id-obh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hbP-0r-pNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UDO-GE-dk7" customClass="ListViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nEN-4t-Is9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -230,6 +235,7 @@
                         <outlet property="tableView" destination="8y0-Z8-5oZ" id="dnM-sU-giA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbP-0r-pNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828" y="132.68365817091455"/>
         </scene>

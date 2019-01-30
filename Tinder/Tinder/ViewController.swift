@@ -46,6 +46,14 @@ class ViewController: UIViewController {
         basicCard.transform = .identity
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pushList" {
+            // 遷移先の ListViewController を代入している
+            let vc = segue.destination as! ListViewController
+            vc.likedName = likedName
+        }
+    }
+    
     // @IBAction はMainStoryBoard から紐づいているっていう宣言
     @IBAction func swipeCard(_ sender: UIPanGestureRecognizer) {
         // カードも一緒に動かす！準備
@@ -92,7 +100,7 @@ class ViewController: UIViewController {
                 likeImageView.alpha = 0
                 selectedCardCount += 1
                 if selectedCardCount >= people.count{
-                    print(likedName)
+                    performSegue(withIdentifier: "pushList", sender: self)
                 }
                 
                 
@@ -106,7 +114,7 @@ class ViewController: UIViewController {
                 likedName.append(name[selectedCardCount])
                 selectedCardCount += 1
                 if selectedCardCount >= people.count{
-                    print(likedName)
+                    performSegue(withIdentifier: "pushList", sender: self)
                 }
                 return
             }

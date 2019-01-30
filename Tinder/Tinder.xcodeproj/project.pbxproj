@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		674061A321FE0A930065B7DC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674061A221FE0A930065B7DC /* ListViewController.swift */; };
 		67DB948821FD4C21000F17ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB948721FD4C21000F17ED /* AppDelegate.swift */; };
 		67DB948A21FD4C21000F17ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB948921FD4C21000F17ED /* ViewController.swift */; };
 		67DB948D21FD4C21000F17ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DB948B21FD4C21000F17ED /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		674061A221FE0A930065B7DC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		67DB948421FD4C21000F17ED /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DB948721FD4C21000F17ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67DB948921FD4C21000F17ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				67DB948721FD4C21000F17ED /* AppDelegate.swift */,
 				67DB948921FD4C21000F17ED /* ViewController.swift */,
+				674061A221FE0A930065B7DC /* ListViewController.swift */,
 				67DB948B21FD4C21000F17ED /* Main.storyboard */,
 				67DB948E21FD4C22000F17ED /* Assets.xcassets */,
 				67DB949021FD4C22000F17ED /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				67DB948A21FD4C21000F17ED /* ViewController.swift in Sources */,
 				67DB948821FD4C21000F17ED /* AppDelegate.swift in Sources */,
+				674061A321FE0A930065B7DC /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
